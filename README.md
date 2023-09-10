@@ -1,27 +1,48 @@
-# React + TypeScript + Vite
+# My Vite + React Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a Vite + React application that can be easily run using Docker.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Before you begin, ensure you have the following tools installed:
 
-## Expanding the ESLint configuration
+- Docker: [Install Docker](https://docs.docker.com/get-docker/)
+- Node.js (for development): [Install Node.js](https://nodejs.org/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+Follow these steps to run the Vite + React application inside a Docker container:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+1. **Build the Docker Image:**
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+   ```sh
+   docker build -t books-app .
+   ```
+
+2. **Run the Docker Container:**
+
+   ```sh
+   docker run -p 4173:4173 books-app
+   ```
+
+3. **Access the application:**
+   Open a web browser and navigate to http://localhost:4173/ to access your Vite + React application.
+
+## Development
+
+If you want to work on the project in a development environment (outside Docker), follow these additional steps:
+
+1. **Instal dependencies:**
+
+   ```sh
+   npm install
+   ```
+
+2. **Run the Development Server:**
+
+   ```sh
+   npm run dev
+   ```
+
+3. **Access the Development Server:**
+   Open a web browser and navigate to http://localhost:8000 to access the development server.
